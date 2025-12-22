@@ -1,0 +1,111 @@
+@use '../styles/variables' as *;
+
+.testimonials {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-blue-100);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background: linear-gradient(to bottom right, var(--color-blue-50), white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 1rem;
+  padding: 2rem;
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  opacity: 0.1;
+  color: var(--color-primary);
+}
+
+.rating {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.star {
+  fill: var(--color-yellow-400);
+  color: var(--color-yellow-400);
+}
+
+.content {
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.author {
+  border-top: 1px solid var(--color-gray-200);
+  padding-top: 1rem;
+}
+
+.authorName {
+  color: var(--color-dark);
+  margin-bottom: 0.25rem;
+}
+
+.authorRole {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.authorHospital {
+  font-size: 0.875rem;
+  color: var(--color-primary);
+  margin: 0;
+}
