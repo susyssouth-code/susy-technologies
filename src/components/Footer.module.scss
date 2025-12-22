@@ -1,0 +1,168 @@
+@use '../styles/variables' as *;
+
+.footer {
+  background-color: var(--color-dark);
+  color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 4rem 1.5rem;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 4rem 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: 3rem;
+  margin-bottom: 3rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.companyInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.logo {
+  height: 4rem;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+.tagline {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 14px;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-gray-800);
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+
+  &:hover {
+    background-color: var(--color-primary);
+  }
+}
+
+.section h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  color: var(--color-gray-400);
+  transition: color 0.15s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.textItem {
+  color: var(--color-gray-400);
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--color-gray-400);
+}
+
+.contactIcon {
+  margin-top: 0.125rem;
+  flex-shrink: 0;
+}
+
+.contactText {
+  font-size: 0.875rem;
+}
+
+.bottomBar {
+  border-top: 1px solid var(--color-gray-800);
+  padding-top: 2rem;
+}
+
+.bottomContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  text-align: center;
+  color: var(--color-gray-400);
+  font-size: 0.875rem;
+  margin: 0;
+
+  @media (min-width: $breakpoint-md) {
+    text-align: left;
+  }
+}
+
+.legalLinks {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.legalLink {
+  color: var(--color-gray-400);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: white;
+  }
+}

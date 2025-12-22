@@ -1,0 +1,146 @@
+@use '../styles/variables' as *;
+
+.services {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--color-blue-100);
+  color: var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--color-text-light);
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  background-color: white;
+  border: 2px solid var(--color-gray-100);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+
+    .iconWrapper {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.iconWrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.15s ease;
+  color: white;
+
+  &.blue { background-color: var(--color-blue-500); }
+  &.purple { background-color: var(--color-purple-500); }
+  &.green { background-color: var(--color-green-500); }
+  &.red { background-color: var(--color-red-500); }
+  &.orange { background-color: var(--color-orange-500); }
+  &.cyan { background-color: var(--color-cyan-500); }
+  &.indigo { background-color: var(--color-indigo-500); }
+}
+
+.cardTitle {
+  color: var(--color-dark);
+  margin-bottom: 0.75rem;
+}
+
+.cardDescription {
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.featureList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.featureCheck {
+  color: var(--color-secondary);
+  margin-top: 0.125rem;
+}
+
+.quoteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+  color: var(--color-primary);
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--color-primary-hover);
+
+    .quoteArrow {
+      transform: translateX(0.25rem);
+    }
+  }
+}
+
+.quoteArrow {
+  transition: transform 0.15s ease;
+}
