@@ -1,14 +1,16 @@
 import mongoose from 'mongoose';
 
-const MONGODB_URI = process.env.MONGODB_URI!;
-
-if (!MONGODB_URI) {
-  throw new Error('Please define MONGODB_URI');
-}
+// Don't read or throw on env var at module import time. Next.js may import
+// this file during the build where env vars like MONGODB_URI may be unset.
+const MONGODB_URI = process.env.MONGODB_URI;
 
 let cached = (global as any).mongoose || { conn: null, promise: null };
 
 export async function connectDB() {
+  if (!MONGODB_URI) {
+    throw new Error('Please define the MONGODB_URI environment variable');
+  }
+
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
@@ -16,6 +18,7 @@ export async function connectDB() {
   }
 
   cached.conn = await cached.promise;
+  (global as any).mongoose = cached;
   return cached.conn;
 }
     
