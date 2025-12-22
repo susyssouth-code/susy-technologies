@@ -8,7 +8,15 @@ export async function POST(req: Request) {
 
     await connectDB();
 
-    await Contact.create(data);
+    // If connectDB returned null (no MONGODB_URI set), skip DB write.
+    // This allows builds/deploys to succeed in environments where the
+    // database isn't available. In production you should ensure the
+    // MONGODB_URI is set and remove this fallback if you want strict failures.
+    if (process.env.MONGODB_URI) {
+      await Contact.create(data);
+    } else {
+      console.warn('MONGODB_URI not set — skipping Contact.create');
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {

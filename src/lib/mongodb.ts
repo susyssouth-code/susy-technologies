@@ -8,7 +8,11 @@ let cached = (global as any).mongoose || { conn: null, promise: null };
 
 export async function connectDB() {
   if (!MONGODB_URI) {
-    throw new Error('Please define the MONGODB_URI environment variable');
+    // Environment doesn't provide a MongoDB URI (likely during static builds).
+    // Return null rather than throwing so build-time code that imports this
+    // module won't crash. Callers should handle a null return (skip DB ops).
+    console.warn('MONGODB_URI not defined — skipping DB connection');
+    return null as any;
   }
 
   if (cached.conn) return cached.conn;
