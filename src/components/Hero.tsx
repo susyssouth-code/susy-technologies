@@ -23,7 +23,6 @@ export function Hero() {
     <section id="home" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.grid}>
-          {/* Left Content */}
           <div className={styles.content}>
             <div className={styles.badge}>
               <span className={styles.badgeContent}>
